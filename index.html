@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Hand-Object Interaction Image Generation.">
+  <meta name="keywords" content="Nerfies, D-NeRF, NeRF">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hand-Object Interaction Image Generation</title>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/ustc.gif">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Hand-Object Interaction Image Generation</h1>
+          <h2 class="is-size-5">NeurIPS 2022 (Spotlight)</h2>
+          <br></br>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://dblp.org/pid/273/3660.html">Hezhen Hu</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=YfV4aCQAAAAJ">Weilun Wang</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=8s1JF8YAAAAJ">Wengang Zhou</a><sup>1,2</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://scholar.google.com/citations?hl=zh-CN&user=7sFMIKoAAAAJ">Houqiang Li</a><sup>1,2</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of Science and Technology of China,</span>
+            <span class="author-block"><sup>2</sup>Institute of Artificial Intelligence, Hefei Comprehensive National Science Center</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/forum?id=DDEwoD608_l"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href=""
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv (Comming Soon)</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+<!--              <span class="link-block">-->
+<!--                <a href=""-->
+<!--                   class="external-link button is-normal is-rounded is-dark">-->
+<!--                  <span class="icon">-->
+<!--                      <i class="fab fa-youtube"></i>-->
+<!--                  </span>-->
+<!--                  <span>Video</span>-->
+<!--                </a>-->
+<!--              </span>-->
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/play-with-HOI-generation/HOIG"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <video controls autoplay loop width="760" style="object-fit: contain;grid-column: page;margin:auto">
+    <source src="static/videos/Video.mp4" type="video/mp4">
+  </video>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            In this work, we are dedicated to a new task, <em>i.e.</em>, hand-object interaction image generation,
+            which aims to conditionally generate the hand-object image under the given hand,
+            object and their interaction status.
+            This task is challenging and research-worthy in many potential application scenarios,
+            such as AR/VR games and online shopping, <em>etc.</em>
+          </p>
+          <p>
+            To address this problem, we propose a novel HOGAN framework,
+            which utilizes the expressive model-aware hand-object representation and leverages its inherent topology
+            to build the unified surface space.
+            In this space, we explicitly consider the complex self- and mutual occlusion during interaction.
+            During final image synthesis, we consider different characteristics of hand and object and generate
+            the target image in a split-and-combine manner.
+          </p>
+          <p>
+            For evaluation, we build a comprehensive protocol to access both the fidelity and structure
+            preservation of the generated image.
+            Extensive experiments on two large-scale datasets, <em>i.e.</em>, HO3Dv3 and DexYCB,
+            demonstrate the effectiveness and superiority of our framework both quantitatively and qualitatively.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper results. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Generation Results</h2>
+        <div class="content has-text-justified">
+          <p>
+            We perform qualitative comparisons with baselines, <em>i.e.</em>, GestureGAN+OBJ and MG2T+OBJ,
+            on HO3Dv3 and DexYCB dataset.
+            Under the complex scenes,
+            where the hand and object are highly interacting,
+            our method can generate images with more reasonable spatial relationship,
+            which significantly outperforms baseline methods.
+          </p>
+        </div>
+        <div class="publication-image">
+          <img src="static/images/fig2.png" width="760" alt="generation results">
+        </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+
+    <!-- Application. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Application</h2>
+        <div class="content has-text-justified">
+          <p>
+            We explore several applications on our HOGAN, <em>i.e.</em>,
+            object texture editing and real-world generation.
+          </p>
+          <p>
+            In object texture editing,
+            we alter the object texture with characters,
+            <em>i.e.</em>, "NeurIPS" and "2022",
+            and generate the images conditioned on the edited textures.
+            From the Figure (a), it is observed that our generated images
+            well preserve the edited characters on the object texture.
+          </p>
+          <p>
+            Furthermore, we take the hand image from the real scene
+            as the source image to test our pre-trained HOGAN framework.
+            As shown in Figure (b), the generated images both maintain
+            the source image appearance and meet the target posture condition.
+          </p>
+        </div>
+        <div class="publication-image">
+          <img src="static/images/fig3.png" width="760" alt="generation results">
+        </div>
+      </div>
+    </div>
+    <!--/ Application. -->
+
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{hu2022hand,
+  author    = {Hu, Hezhen and Wang, Weilun and Zhou, Wengang and Li, Houqiang},
+  title     = {Hand-Object Interaction Image Generation},
+  booktitle = {NeurIPS},
+  year      = {2022},
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            The website code is borrowed from the <a
+                  href="https://github.com/nerfies/nerfies.github.io">source code</a> of Nerfies.
+            We thank the authors for sharing the templates.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
